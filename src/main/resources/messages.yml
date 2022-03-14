@@ -1,0 +1,8 @@
+# WayPointChat
+# Chat Manager
+# Author: Waypoint (Branchyz)
+
+prefix: "&6[WayPointChat] "
+no-permission: "&cYou don't have permission for that!"
+title-motd: "&6Welcome to the server!" #%Player%
+subtitle-motd: "&6%player%" #%Player%

@@ -1,0 +1,10 @@
+name: WayPointChat
+version: '${project.version}'
+main: me.branchyz.waypointchat.WayPointChat
+api-version: 1.18
+authors: [ Branchyz, WayPoint ]
+depend: [CommandAPI]
+commands:
+  broadcast:
+    aliases: [bc]
+    description: "Broadcast a message!"
