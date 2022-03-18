@@ -6,16 +6,13 @@ prefix: '&6[WayPointChat] '
 broadcast-prefix: '&6[Broadcast]&r '
 no-permission: '&cYou don''t have permission for that!'
 not-a-player: '&cYou need to be a player do that!'
-#  invalid-usage placeholders: %usage%
 invalid-usage: '&cInvalid usage! Usage: %usage%'
-#  title-motd placeholders: %player%
 title-motd: '&6Welcome to the server!'
-#  subtitle-motd placeholders: %player%
 subtitle-motd: '&6%player%'
 curse-word-used: '&cPlease do not curse in chat!'
-# curse-word-alert placeholders: %player% & %curse_word%
 curse-word-alert: '&c%player% tried to use a curse word (%curse_word%)!'
 chat-is-muted: '&cThe chat is muted!'
 chat-muted-toggle-on: '&6The chat is now muted!'
 chat-muted-toggle-off: '&6The chat is now unmuted!'
 chat-is-cleared: "&6The chat has been cleared!"
+countdown-ended: "&6The countdown %countdown-name% has ended!"

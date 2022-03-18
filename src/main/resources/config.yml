@@ -32,3 +32,5 @@ auto-broadcast:
       - "&6https://www.spigotmc.org/"
     start: 3000
     interval: 6000
+
+countdown-format: "%countdown-name%: %time%" # Placeholders: %time% & %countdown-name%

@@ -8,12 +8,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.logging.Level;
 
-public class AutoBroadcaster extends BukkitRunnable {
+public class AutoBroadcast extends BukkitRunnable {
     private final String[] messages;
     private final int interval;
     private final int start;
 
-    private AutoBroadcaster(String[] messages, int interval, int start, WayPointChat plugin) {
+    private AutoBroadcast(String[] messages, int interval, int start, WayPointChat plugin) {
         this.messages = messages;
         this.interval = interval;
         this.start = start;
@@ -36,7 +36,7 @@ public class AutoBroadcaster extends BukkitRunnable {
             final int interval = sec.getInt(key + ".interval");
             final String[] messages = sec.getStringList(key + ".messages").toArray(new String[0]);
 
-            new AutoBroadcaster(messages, interval, start, plugin);
+            new AutoBroadcast(messages, interval, start, plugin);
             plugin.log("Registered the \"" + key + "\" auto-broadcast!", Level.INFO);
         }
     }

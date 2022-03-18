@@ -13,15 +13,16 @@ public enum Messages {
     BROADCAST_PREFIX("broadcast-prefix", "&6[Broadcast]&r ", new String[0]),
     NO_PERMS("no-permission", "&cYou don't have permission for that!", new String[0]),
     NOT_A_PLAYER("not-a-player", "&cYou need to be a player do that!", new String[0]),
-    INVALID_USAGE("invalid-usage", "&cInvalid usage! Usage: %usage%", new String[]{" invalid-usage placeholders: %usage%"}),
-    TITLE_MOTD("title-motd", "&6Welcome to the server!", new String[]{" title-motd placeholders: %player%"}),
-    SUBTITLE_MOTD("subtitle-motd", "&6%player%", new String[]{" subtitle-motd placeholders: %player%"}),
+    INVALID_USAGE("invalid-usage", "&cInvalid usage! Usage: %usage%", new String[]{" Placeholders: %usage%"}),
+    TITLE_MOTD("title-motd", "&6Welcome to the server!", new String[]{" Placeholders: %player%"}),
+    SUBTITLE_MOTD("subtitle-motd", "&6%player%", new String[]{" Placeholders: %player%"}),
     CURSE_WORD_USED("curse-word-used", "&cPlease do not curse in chat!", new String[0]),
-    CURSE_WORD_ALERT("curse-word-alert", "&c%player% tried to use a curse word (%curse_word%)!", new String[]{" curse-word-alert placeholders: %player% & %curse_word%"}),
+    CURSE_WORD_ALERT("curse-word-alert", "&c%player% tried to use a curse word (%curse_word%)!", new String[]{" Placeholders: %player% & %curse_word%"}),
     CHAT_IS_MUTED("chat-is-muted", "&cThe chat is muted!", new String[0]),
     CHAT_MUTED_TOGGLE_ON("chat-muted-toggle-on", "&6The chat is now muted!", new String[0]),
     CHAT_MUTED_TOGGLE_OFF("chat-muted-toggle-off", "&6The chat is now unmuted!", new String[0]),
-    CHAT_IS_CLEARED("chat-is-cleared", "&6The chat has been cleared!", new String[0]);
+    CHAT_IS_CLEARED("chat-is-cleared", "&6The chat has been cleared!", new String[0]),
+    COUNTDOWN_ENDED("countdown-ended", "&6The countdown %countdown-name% has ended!", new String[]{" Placeholders: %countdown-name%"});
 
     private String path;
     private String def;
@@ -54,7 +55,7 @@ public enum Messages {
             if (conf.getString(item.getPath()) == null)
                 conf.set(item.getPath(), item.getDefault());
 
-            conf.setComments(item.getPath(), Arrays.asList(item.getComments()));
+            conf.setInlineComments(item.getPath(), Arrays.asList(item.getComments()));
         }
 
         config = conf;
