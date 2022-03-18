@@ -24,6 +24,7 @@ public class InfoCommandManager {
 
     public static void registerCommands(WayPointChat plugin) {
         for (String key : config.getKeys(false)) {
+            if(!(config.contains(key + ".command") && config.contains(key + ".aliases") && config.contains(key + ".output"))) continue;
             final String command = config.getString(key + ".command");
             final String[] aliases = config.getStringList(key + ".aliases").toArray(new String[0]);
             final String[] output = config.getStringList(key + ".output").toArray(new String[0]);

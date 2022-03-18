@@ -18,3 +18,4 @@ curse-word-alert: '&c%player% tried to use a curse word (%curse_word%)!'
 chat-is-muted: '&cThe chat is muted!'
 chat-muted-toggle-on: '&6The chat is now muted!'
 chat-muted-toggle-off: '&6The chat is now unmuted!'
+chat-is-cleared: "&6The chat has been cleared!"

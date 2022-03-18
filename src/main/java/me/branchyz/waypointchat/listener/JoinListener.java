@@ -19,9 +19,9 @@ public class JoinListener implements Listener {
         final Player p = e.getPlayer();
         final String title = Messages.TITLE_MOTD.toString().replace("%player%", p.getName());
         final String subtitle = Messages.SUBTITLE_MOTD.toString().replace("%player%", p.getName());
-        final int fadeIn = plugin.getConfig().getInt("motd-title.fade-in");
-        final int stay = plugin.getConfig().getInt("motd-title.stay");
-        final int fadeOut = plugin.getConfig().getInt("motd-title.fade-out");
+        final int fadeIn = plugin.getConfig().getInt("motd-title.fade-in", 20);
+        final int stay = plugin.getConfig().getInt("motd-title.stay", 60);
+        final int fadeOut = plugin.getConfig().getInt("motd-title.fade-out", 20);
 
         p.sendTitle(title, subtitle, fadeIn, stay, fadeOut);
     }

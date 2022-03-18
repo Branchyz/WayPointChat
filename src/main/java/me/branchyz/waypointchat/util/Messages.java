@@ -20,7 +20,8 @@ public enum Messages {
     CURSE_WORD_ALERT("curse-word-alert", "&c%player% tried to use a curse word (%curse_word%)!", new String[]{" curse-word-alert placeholders: %player% & %curse_word%"}),
     CHAT_IS_MUTED("chat-is-muted", "&cThe chat is muted!", new String[0]),
     CHAT_MUTED_TOGGLE_ON("chat-muted-toggle-on", "&6The chat is now muted!", new String[0]),
-    CHAT_MUTED_TOGGLE_OFF("chat-muted-toggle-off", "&6The chat is now unmuted!", new String[0]);
+    CHAT_MUTED_TOGGLE_OFF("chat-muted-toggle-off", "&6The chat is now unmuted!", new String[0]),
+    CHAT_IS_CLEARED("chat-is-cleared", "&6The chat has been cleared!", new String[0]);
 
     private String path;
     private String def;

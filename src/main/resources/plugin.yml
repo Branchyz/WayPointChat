@@ -11,6 +11,8 @@ commands:
   mutechat:
     aliases: [unmutechat]
     description: "This command mutes the chat!"
+  clearchat:
+    description: "This command clears the chat!"
 
 permissions:
   waypoint.alert:
@@ -21,3 +23,5 @@ permissions:
     description: "With this permission you have access to the mutechat command!"
   waypoint.mutechat.bypass:
     description: "With this permission, you can still chat when the chat is muted!"
+  waypoint.clearchat:
+      description: "With this permission you have access to the clearchat command!"

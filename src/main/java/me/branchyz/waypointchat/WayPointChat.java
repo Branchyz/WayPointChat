@@ -2,10 +2,13 @@ package me.branchyz.waypointchat;
 
 import me.branchyz.waypointchat.command.info.InfoCommandManager;
 import me.branchyz.waypointchat.command.plugin.BroadcastCommand;
+import me.branchyz.waypointchat.command.plugin.ClearChatCommand;
 import me.branchyz.waypointchat.command.plugin.MuteChatCommand;
 import me.branchyz.waypointchat.listener.ChatListener;
 import me.branchyz.waypointchat.listener.JoinListener;
+import me.branchyz.waypointchat.runnable.AutoBroadcaster;
 import me.branchyz.waypointchat.util.Messages;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,17 +28,21 @@ public final class WayPointChat extends JavaPlugin {
                 " Author: Waypoint (Branchyz)",
                 " Notes:",
                 "",
-                " ALL Messages/Strings are in messages.yml (Except info commands output)"));
+                " All Messages/Strings are in messages.yml (Except info commands output & auto broadcasts)",
+                " Use https://mapmaking.fr/tick/ for auto-broadcast interval calculation."));
         saveDefaultConfig();
         getConfig().options().copyDefaults(true);
         InfoCommandManager.initialize(this);
 
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         getCommand("mutechat").setExecutor(new MuteChatCommand(this));
+        getCommand("clearchat").setExecutor(new ClearChatCommand(this));
 
         final PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new JoinListener(this), this);
         pluginManager.registerEvents(new ChatListener(this), this);
+
+        AutoBroadcaster.initialize(this);
     }
 
     @Override
@@ -59,4 +66,5 @@ public final class WayPointChat extends JavaPlugin {
     public void setChatMuted(boolean chatMuted) {
         this.chatMuted = chatMuted;
     }
+
 }
