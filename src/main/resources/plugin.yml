@@ -7,4 +7,17 @@ depend: [CommandAPI]
 commands:
   broadcast:
     aliases: [bc]
-    description: "Broadcast a message!"
+    description: "This command broadcasts a message!"
+  mutechat:
+    aliases: [unmutechat]
+    description: "This command mutes the chat!"
+
+permissions:
+  waypoint.alert:
+    description: "Players with this permission will receive an alert when someone uses a curse word!"
+  waypoint.broadcast:
+    description: "With this permission you have access to the broadcast command!"
+  waypoint.mutechat:
+    description: "With this permission you have access to the mutechat command!"
+  waypoint.mutechat.bypass:
+    description: "With this permission, you can still chat when the chat is muted!"

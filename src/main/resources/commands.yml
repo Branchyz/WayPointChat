@@ -1,0 +1,15 @@
+# WayPointChat
+# Chat Manager
+# Author: Waypoint (Branchyz)
+#
+# Notes:
+# You can use the %player% placeholder in the output.
+# The prefix is not used in the info commands, you have to set it manually.
+
+#Example:
+discord-command:
+  command: "discord" #DO NOT USE A SLASH HERE!
+  aliases: ["dc"] #DO NOT USE A SLASH HERE!
+  output:
+    - "&6Our &6&lDiscord&r&6 Server:"
+    - "&6https://discord.gg/spigotmc"

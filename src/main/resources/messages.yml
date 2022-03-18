@@ -12,3 +12,9 @@ invalid-usage: '&cInvalid usage! Usage: %usage%'
 title-motd: '&6Welcome to the server!'
 #  subtitle-motd placeholders: %player%
 subtitle-motd: '&6%player%'
+curse-word-used: '&cPlease do not curse in chat!'
+# curse-word-alert placeholders: %player% & %curse_word%
+curse-word-alert: '&c%player% tried to use a curse word (%curse_word%)!'
+chat-is-muted: '&cThe chat is muted!'
+chat-muted-toggle-on: '&6The chat is now muted!'
+chat-muted-toggle-off: '&6The chat is now unmuted!'

@@ -3,10 +3,14 @@
 # Author: Waypoint (Branchyz)
 #
 # Notes:
-# ALL Messages are in messages.yml
+# ALL Messages are in messages.yml (Except info commands output)
 
 motd-title:
   fade-in: 20
   stay: 60
   fade-out: 20
+
+curse-words:
+  - 'hello'
+  - 'hey'
 
