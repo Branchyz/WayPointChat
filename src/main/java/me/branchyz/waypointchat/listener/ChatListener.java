@@ -1,6 +1,7 @@
 package me.branchyz.waypointchat.listener;
 
 import me.branchyz.waypointchat.WayPointChat;
+import me.branchyz.waypointchat.util.CurseWordsConfig;
 import me.branchyz.waypointchat.util.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -30,7 +31,7 @@ public class ChatListener implements Listener {
 
         }
 
-        final ArrayList<String> curseWords = new ArrayList<>(plugin.getConfig().getStringList("curse-words"));
+        final ArrayList<String> curseWords = new ArrayList<>(CurseWordsConfig.get().getStringList("curse-words"));
         final String msg = e.getMessage().toLowerCase();
 
         for (String curseWord : curseWords) {

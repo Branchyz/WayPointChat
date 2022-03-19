@@ -2,7 +2,7 @@ package me.branchyz.waypointchat.command.plugin;
 
 import me.branchyz.waypointchat.WayPointChat;
 import me.branchyz.waypointchat.runnable.Countdown;
-import me.branchyz.waypointchat.util.ActionsConfig;
+import me.branchyz.waypointchat.util.CountdownConfig;
 import me.branchyz.waypointchat.util.Messages;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
@@ -82,12 +82,12 @@ public class CountdownCommand implements CommandExecutor {
         final int sec = Integer.parseInt(args[2]);
 
         final String actionKey = args[3];
-        if(!ActionsConfig.get().contains(actionKey)) {
+        if(!CountdownConfig.get().contains(actionKey)) {
             sender.sendMessage(Messages.PREFIX + Messages.ACTION_NOT_FOUND.toString().replace("%action-name%", actionKey));
             return;
         }
 
-        final String[] action = ActionsConfig.get().getStringList(actionKey).toArray(new String[0]);
+        final String[] action = CountdownConfig.get().getStringList(actionKey).toArray(new String[0]);
 
         countdowns.put(title, new Countdown(title, BarStyle.SOLID, BarColor.WHITE, sec, action, plugin, this));
         sender.sendMessage(Messages.PREFIX.toString() + Messages.COUNTDOWN_STARTED);

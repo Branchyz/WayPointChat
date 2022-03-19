@@ -1,0 +1,18 @@
+# WayPointChat
+# Chat Manager
+# Author: Waypoint (Branchyz)
+
+countdown-format: "&6%countdown-name%: %time%"
+
+restart:
+  - restart
+
+stop:
+  - stop
+
+broadcast-restart:
+  - broadcast &6Restarting!
+  - restart
+
+test:
+  - broadcast Countdown done!

@@ -1,7 +1,7 @@
 name: WayPointChat
 version: '${project.version}'
 main: me.branchyz.waypointchat.WayPointChat
-api-version: 1.18
+api-version: ${project.version}
 authors: [ Branchyz, WayPoint ]
 depend: [CommandAPI]
 commands:

@@ -6,13 +6,14 @@ import me.branchyz.waypointchat.listener.ChatListener;
 import me.branchyz.waypointchat.listener.JoinListener;
 import me.branchyz.waypointchat.runnable.AutoBroadcast;
 import me.branchyz.waypointchat.runnable.Countdown;
-import me.branchyz.waypointchat.util.ActionsConfig;
+import me.branchyz.waypointchat.util.AutoBroadcastConfig;
+import me.branchyz.waypointchat.util.CountdownConfig;
+import me.branchyz.waypointchat.util.CurseWordsConfig;
 import me.branchyz.waypointchat.util.Messages;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.logging.Level;
 
 public final class WayPointChat extends JavaPlugin {
@@ -21,14 +22,7 @@ public final class WayPointChat extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getDataFolder().mkdir();
-        // Plugin startup logic
-        Messages.initialize(this);
-        setupConfig("Config loaded!", false);
-        ActionsConfig.setup(this);
-        ActionsConfig.get().options().copyDefaults(true);
-        ActionsConfig.save(this);
-        InfoCommandManager.initialize(this);
+        setupConfigs();
 
         countdownCommand = new CountdownCommand(this);
 
@@ -72,19 +66,40 @@ public final class WayPointChat extends JavaPlugin {
         this.chatMuted = chatMuted;
     }
 
-    public void setupConfig(String msg, boolean reload) {
+    private void setupDefaultConfig() {
         getConfig().options().setHeader(Arrays.asList(" WayPointChat",
                 " Chat Manager",
-                " Author: Waypoint (Branchyz)",
-                " Notes:",
-                "",
-                " All Messages are in messages.yml (Except info commands output & auto broadcasts)",
-                " Use https://mapmaking.fr/tick/ for auto-broadcast interval calculation."));
+                " Author: Waypoint (Branchyz)"));
         getConfig().options().copyDefaults(true);
-        getConfig().setInlineComments("countdown-format", Arrays.asList("Placeholders: %time% & %countdown-name%"));
         saveDefaultConfig();
-        if(reload) reloadConfig();
-        log(msg, Level.INFO);
+    }
+
+    private void setupConfigs() {
+        getDataFolder().mkdir();
+
+        Messages.initialize(this);
+        log("messages.yml loaded!", Level.INFO);
+
+        setupDefaultConfig();
+        log("config.yml loaded!", Level.INFO);
+
+        CountdownConfig.setup(this);
+        CountdownConfig.get().options().copyDefaults(true);
+        CountdownConfig.save(this);
+        log("countdown.yml loaded!", Level.INFO);
+
+        CurseWordsConfig.setup(this);
+        CurseWordsConfig.get().options().copyDefaults(true);
+        CurseWordsConfig.save(this);
+        log("cursed-words.yml loaded!", Level.INFO);
+
+        AutoBroadcastConfig.setup(this);
+        AutoBroadcastConfig.get().options().copyDefaults(true);
+        AutoBroadcastConfig.save(this);
+        log("auto-broadcast.yml loaded!", Level.INFO);
+
+        InfoCommandManager.initialize(this);
+        log("commands.yml loaded!", Level.INFO);
     }
 
 }

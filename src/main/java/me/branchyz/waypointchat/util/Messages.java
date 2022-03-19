@@ -27,7 +27,7 @@ public enum Messages {
     ACTION_NOT_FOUND("action-not-found", "&cNo action found with the name %action-name%!", new String[]{"Placeholders: %action-name%"}),
     COUNTDOWN_STARTED("countdown-started", "&6The countdown has started!", new String[0]),
     COUNTDOWN_STOPPED("countdown-stopped", "&6The countdown has been stopped!", new String[0]),
-    COUNTDOWN_ALREADY_EXIST("countdown-already-exist", "&cThat countdown already exist! You can stop it by using the countdown stop command!", new String[0]),
+    COUNTDOWN_ALREADY_EXIST("countdown-already-exist", "&cThat countdown already exist!", new String[0]),
     COUNTDOWN_DOES_NOT_EXIST("countdown-does-not-exist", "&cThat countdown doesn't exist!", new String[0]);
 
     private String path;

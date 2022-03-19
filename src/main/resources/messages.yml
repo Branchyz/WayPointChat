@@ -20,5 +20,5 @@ countdown-command-help: '&cUse "%start-usage%" or "%stop-usage%"!'
 action-not-found: "&cNo action found with the name %action-name%!"
 countdown-started: "&6The countdown has started!"
 countdown-stopped: "&6The countdown has been stopped!"
-countdown-already-exist: "&cThat countdown already exist! You can stop it by using the countdown stop command!"
+countdown-already-exist: "&cThat countdown already exist!"
 countdown-does-not-exist: "&cThat countdown doesn't exist!"

@@ -8,17 +8,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class ActionsConfig {
-
+public class AutoBroadcastConfig {
     private static File file;
     private static FileConfiguration conf;
 
     public static void setup(WayPointChat plugin){
-        file = new File(plugin.getDataFolder(), "actions.yml");
+        file = new File(plugin.getDataFolder(), "auto-broadcast.yml");
         if(!file.exists()) {
             try {
                 file.createNewFile();
-                plugin.saveResource("actions.yml", true);
+                plugin.saveResource("auto-broadcast.yml", true);
             } catch (IOException e) {
                 e.printStackTrace();
                 plugin.disable();
@@ -27,7 +26,11 @@ public class ActionsConfig {
         conf = YamlConfiguration.loadConfiguration(file);
         conf.options().setHeader(Arrays.asList(" WayPointChat",
                 " Chat Manager",
-                " Author: Waypoint (Branchyz)"));
+                " Author: Waypoint (Branchyz)",
+                "",
+                " Notes:",
+                " Use https://mapmaking.fr/tick/ for auto-broadcast interval calculation."));
+        save(plugin);
     }
 
     public static FileConfiguration get(){

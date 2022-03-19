@@ -1,36 +1,10 @@
 # WayPointChat
 # Chat Manager
 # Author: Waypoint (Branchyz)
-#
-# Notes:
-# All Messages are in messages.yml (Except info commands output & auto broadcasts)
-# Use https://mapmaking.fr/tick/ for auto-broadcast interval calculation.
 
 motd-title:
   fade-in: 20
   stay: 60
   fade-out: 20
 
-curse-words:
-  - 'hello'
-  - 'hey'
-
 clear-chat-iterations: 100
-
-auto-broadcast:
-  discord:
-    messages:
-      - "&6Don't forget to join our Discord server!"
-      - "&6Our &6&lDiscord&r&6 Server:"
-      - "&6https://discord.gg/spigotmc"
-    start: 0
-    interval: 6000
-  website:
-    messages:
-      - "&6Don't forget to visit our website!"
-      - "&6Our &6&lWebsite&r&6:"
-      - "&6https://www.spigotmc.org/"
-    start: 3000
-    interval: 6000
-
-countdown-format: "%countdown-name%: %time%" # Placeholders: %time% & %countdown-name%

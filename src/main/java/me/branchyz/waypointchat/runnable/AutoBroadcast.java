@@ -1,6 +1,7 @@
 package me.branchyz.waypointchat.runnable;
 
 import me.branchyz.waypointchat.WayPointChat;
+import me.branchyz.waypointchat.util.AutoBroadcastConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
@@ -26,7 +27,7 @@ public class AutoBroadcast extends BukkitRunnable {
     }
 
     public static void initialize(WayPointChat plugin) {
-        final ConfigurationSection sec = plugin.getConfig().getConfigurationSection("auto-broadcast");
+        final ConfigurationSection sec = AutoBroadcastConfig.get().getConfigurationSection("auto-broadcast");
         for (String key : sec.getKeys(false)) {
             if (!(sec.contains(key + ".start") && sec.contains(key + ".interval") && sec.contains(key + ".messages")))
                 continue;

@@ -1,0 +1,22 @@
+# WayPointChat
+# Chat Manager
+# Author: Waypoint (Branchyz)
+#
+# Notes:
+# Use https://mapmaking.fr/tick/ for auto-broadcast interval calculation.
+
+auto-broadcast:
+  discord:
+    messages:
+      - "&6Don't forget to join our Discord server!"
+      - "&6Our &6&lDiscord&r&6 Server:"
+      - "&6https://discord.gg/spigotmc"
+    start: 0
+    interval: 6000
+  website:
+    messages:
+      - "&6Don't forget to visit our website!"
+      - "&6Our &6&lWebsite&r&6:"
+      - "&6https://www.spigotmc.org/"
+    start: 3000
+    interval: 6000

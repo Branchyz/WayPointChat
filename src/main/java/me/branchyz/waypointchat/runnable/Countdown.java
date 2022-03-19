@@ -2,8 +2,10 @@ package me.branchyz.waypointchat.runnable;
 
 import me.branchyz.waypointchat.WayPointChat;
 import me.branchyz.waypointchat.command.plugin.CountdownCommand;
+import me.branchyz.waypointchat.util.CountdownConfig;
 import me.branchyz.waypointchat.util.Messages;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
@@ -63,11 +65,11 @@ public class Countdown extends BukkitRunnable {
         final String strMin= (min<10) ? "0" + min : Integer.toString(min);
         final String strHours= (hours<10) ? "0" + hours : Integer.toString(hours);
 
-        final String format = plugin.getConfig().getString("countdown-format", "%countdown-name%: %time%");
+        final String format = CountdownConfig.get().getString("countdown-format", "%countdown-name%: %time%");
         final String title = format.replace("%countdown-name%", this.title)
                 .replace("%time%", strHours + ":" + strMin + ":" + strSec);
 
-        bar.setTitle(title);
+        bar.setTitle(ChatColor.translateAlternateColorCodes('&', title));
         bar.setProgress(progress);
         progress = progress - (1.0/max);
 
