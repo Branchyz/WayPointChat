@@ -13,6 +13,9 @@ commands:
     description: "This command mutes the chat!"
   clearchat:
     description: "This command clears the chat!"
+  countdown:
+    aliases: [cd]
+    description: "This command starts or stops a countdown!"
 
 permissions:
   waypoint.alert:
@@ -24,4 +27,6 @@ permissions:
   waypoint.mutechat.bypass:
     description: "With this permission, you can still chat when the chat is muted!"
   waypoint.clearchat:
-      description: "With this permission you have access to the clearchat command!"
+    description: "With this permission you have access to the clearchat command!"
+  waypoint.countdown:
+    description: "With this permission you have access to the countdown command!"

@@ -3,7 +3,6 @@ package me.branchyz.waypointchat.command.info;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPICommand;
 import me.branchyz.waypointchat.WayPointChat;
-import me.branchyz.waypointchat.util.Messages;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -22,7 +21,7 @@ public class InfoCommandManager {
         registerCommands(plugin);
     }
 
-    public static void registerCommands(WayPointChat plugin) {
+    private static void registerCommands(WayPointChat plugin) {
         for (String key : config.getKeys(false)) {
             if(!(config.contains(key + ".command") && config.contains(key + ".aliases") && config.contains(key + ".output"))) continue;
             final String command = config.getString(key + ".command");

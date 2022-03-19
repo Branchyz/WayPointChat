@@ -13,16 +13,22 @@ public enum Messages {
     BROADCAST_PREFIX("broadcast-prefix", "&6[Broadcast]&r ", new String[0]),
     NO_PERMS("no-permission", "&cYou don't have permission for that!", new String[0]),
     NOT_A_PLAYER("not-a-player", "&cYou need to be a player do that!", new String[0]),
-    INVALID_USAGE("invalid-usage", "&cInvalid usage! Usage: %usage%", new String[]{" Placeholders: %usage%"}),
-    TITLE_MOTD("title-motd", "&6Welcome to the server!", new String[]{" Placeholders: %player%"}),
-    SUBTITLE_MOTD("subtitle-motd", "&6%player%", new String[]{" Placeholders: %player%"}),
+    INVALID_USAGE("invalid-usage", "&cInvalid usage! Usage: %usage%", new String[]{"Placeholders: %usage%"}),
+    TITLE_MOTD("title-motd", "&6Welcome to the server!", new String[]{"Placeholders: %player%"}),
+    SUBTITLE_MOTD("subtitle-motd", "&6%player%", new String[]{"Placeholders: %player%"}),
     CURSE_WORD_USED("curse-word-used", "&cPlease do not curse in chat!", new String[0]),
-    CURSE_WORD_ALERT("curse-word-alert", "&c%player% tried to use a curse word (%curse_word%)!", new String[]{" Placeholders: %player% & %curse_word%"}),
+    CURSE_WORD_ALERT("curse-word-alert", "&c%player% tried to use a curse word (%curse_word%)!", new String[]{"Placeholders: %player% & %curse_word%"}),
     CHAT_IS_MUTED("chat-is-muted", "&cThe chat is muted!", new String[0]),
     CHAT_MUTED_TOGGLE_ON("chat-muted-toggle-on", "&6The chat is now muted!", new String[0]),
     CHAT_MUTED_TOGGLE_OFF("chat-muted-toggle-off", "&6The chat is now unmuted!", new String[0]),
     CHAT_IS_CLEARED("chat-is-cleared", "&6The chat has been cleared!", new String[0]),
-    COUNTDOWN_ENDED("countdown-ended", "&6The countdown %countdown-name% has ended!", new String[]{" Placeholders: %countdown-name%"});
+    COUNTDOWN_ENDED("countdown-ended", "&6The countdown %countdown-name% has ended!", new String[]{"Placeholders: %countdown-name%"}),
+    COUNTDOWN_COMMAND_HELP("countdown-command-help", "&cUse \"%start-usage%\" or \"%stop-usage%\"", new String[]{"Placeholders: %start-usage% & %stop-usage%"}),
+    ACTION_NOT_FOUND("action-not-found", "&cNo action found with the name %action-name%!", new String[]{"Placeholders: %action-name%"}),
+    COUNTDOWN_STARTED("countdown-started", "&6The countdown has started!", new String[0]),
+    COUNTDOWN_STOPPED("countdown-stopped", "&6The countdown has been stopped!", new String[0]),
+    COUNTDOWN_ALREADY_EXIST("countdown-already-exist", "&cThat countdown already exist! You can stop it by using the countdown stop command!", new String[0]),
+    COUNTDOWN_DOES_NOT_EXIST("countdown-does-not-exist", "&cThat countdown doesn't exist!", new String[0]);
 
     private String path;
     private String def;

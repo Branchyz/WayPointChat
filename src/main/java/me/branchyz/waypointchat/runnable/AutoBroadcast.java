@@ -6,17 +6,15 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 
 public class AutoBroadcast extends BukkitRunnable {
     private final String[] messages;
-    private final int interval;
-    private final int start;
+    private static ArrayList<AutoBroadcast> broadcasts = new ArrayList<>();
 
     private AutoBroadcast(String[] messages, int interval, int start, WayPointChat plugin) {
         this.messages = messages;
-        this.interval = interval;
-        this.start = start;
         this.runTaskTimerAsynchronously(plugin, start, interval);
     }
 
@@ -36,8 +34,16 @@ public class AutoBroadcast extends BukkitRunnable {
             final int interval = sec.getInt(key + ".interval");
             final String[] messages = sec.getStringList(key + ".messages").toArray(new String[0]);
 
-            new AutoBroadcast(messages, interval, start, plugin);
+            broadcasts.add(new AutoBroadcast(messages, interval, start, plugin));
             plugin.log("Registered the \"" + key + "\" auto-broadcast!", Level.INFO);
         }
+    }
+
+    public static void disable(WayPointChat plugin) {
+        for (AutoBroadcast broadcast : broadcasts) {
+            broadcast.cancel();
+        }
+        plugin.log("Unregistered auto-broadcasts!", Level.INFO);
+        broadcasts.clear();
     }
 }

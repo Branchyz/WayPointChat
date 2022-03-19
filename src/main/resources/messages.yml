@@ -16,3 +16,9 @@ chat-muted-toggle-on: '&6The chat is now muted!'
 chat-muted-toggle-off: '&6The chat is now unmuted!'
 chat-is-cleared: "&6The chat has been cleared!"
 countdown-ended: "&6The countdown %countdown-name% has ended!"
+countdown-command-help: '&cUse "%start-usage%" or "%stop-usage%"!'
+action-not-found: "&cNo action found with the name %action-name%!"
+countdown-started: "&6The countdown has started!"
+countdown-stopped: "&6The countdown has been stopped!"
+countdown-already-exist: "&cThat countdown already exist! You can stop it by using the countdown stop command!"
+countdown-does-not-exist: "&cThat countdown doesn't exist!"

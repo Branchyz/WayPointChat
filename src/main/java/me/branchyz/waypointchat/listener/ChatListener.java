@@ -9,7 +9,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class ChatListener implements Listener {
     private final WayPointChat plugin;
