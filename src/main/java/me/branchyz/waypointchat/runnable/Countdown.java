@@ -9,14 +9,13 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
 public class Countdown extends BukkitRunnable {
     private final WayPointChat plugin;
 
-    private LocalTime current;
-    private final LocalTime target;
+    private int current; //Sec
+    private final int max;
 
     private final BossBar bar;
 
@@ -24,11 +23,11 @@ public class Countdown extends BukkitRunnable {
 
     private final String[] actions;
 
-    private Countdown(String title, BarStyle style, BarColor color, LocalTime target, String[] actions, WayPointChat plugin) {
+    private Countdown(String title, BarStyle style, BarColor color, int targetSec, String[] actions, WayPointChat plugin) {
         this.plugin = plugin;
 
-        this.current = LocalTime.now();
-        this.target = target;
+        this.current = targetSec;
+        this.max = targetSec;
 
         this.title = title;
 
@@ -50,12 +49,11 @@ public class Countdown extends BukkitRunnable {
 
         if(!bar.isVisible()) bar.setVisible(true);
 
-        this.current = LocalTime.now();
-        final int dif = (int) current.until(target, ChronoUnit.SECONDS);
+        current--;
 
-        final int sec = dif % 60;
-        final int min = (dif / 60)%60;
-        final int hours = (dif/60)/60;
+        final int sec = current % 60;
+        final int min = (current / 60)%60;
+        final int hours = (current/60)/60;
 
         final String strSec= (sec<10) ? "0" + sec : Integer.toString(sec);
         final String strMin= (min<10) ? "0" + min : Integer.toString(min);
@@ -66,9 +64,9 @@ public class Countdown extends BukkitRunnable {
                 .replace("%time%", strHours + ":" + strMin + ":" + strSec);
 
         bar.setTitle(title);
-        bar.setProgress((dif*100.0) / target.getSecond());
+        bar.setProgress((current*100.0) / max);
 
-        if(dif <= 0) {
+        if(current <= 0) {
             final String broadcast = Messages.COUNTDOWN_ENDED.toString().replace("%countdown-name%", title);
             Bukkit.broadcastMessage(broadcast);
 
