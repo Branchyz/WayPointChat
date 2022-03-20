@@ -10,6 +10,7 @@ import me.branchyz.waypointchat.util.AutoBroadcastConfig;
 import me.branchyz.waypointchat.util.CountdownConfig;
 import me.branchyz.waypointchat.util.CurseWordsConfig;
 import me.branchyz.waypointchat.util.Messages;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -98,7 +99,10 @@ public final class WayPointChat extends JavaPlugin {
         AutoBroadcastConfig.save(this);
         log("auto-broadcast.yml loaded!", Level.INFO);
 
-        InfoCommandManager.initialize(this);
+        if(Bukkit.getPluginManager().getPlugin("CommandAPI") != null) {
+            InfoCommandManager.initialize(this, true);
+            log("You must have the CommandAPI dependency to use info commands!", Level.WARNING);
+        } else InfoCommandManager.initialize(this, false);
         log("commands.yml loaded!", Level.INFO);
     }
 

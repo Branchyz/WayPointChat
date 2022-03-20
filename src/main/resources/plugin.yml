@@ -2,7 +2,7 @@ name: WayPointChat
 version: ${project.version}
 main: me.branchyz.waypointchat.WayPointChat
 authors: [ Branchyz, WayPoint ]
-depend: [CommandAPI]
+softdepend: [CommandAPI]
 
 commands:
   broadcast:

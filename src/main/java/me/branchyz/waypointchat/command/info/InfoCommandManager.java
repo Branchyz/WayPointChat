@@ -16,7 +16,7 @@ public class InfoCommandManager {
     private static FileConfiguration config;
     private static ArrayList<CommandAPICommand> commands = new ArrayList<>();
 
-    public static void initialize(WayPointChat plugin) {
+    public static void initialize(WayPointChat plugin, boolean register) {
         initializeFile(plugin);
         registerCommands(plugin);
     }
