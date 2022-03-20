@@ -103,12 +103,12 @@ public final class WayPointChat extends JavaPlugin {
         AutoBroadcastConfig.save(this);
         log("auto-broadcast.yml loaded!", Level.INFO);
 
-        if(Bukkit.getPluginManager().getPlugin("CommandAPI") != null)
-            InfoCommandManager.initialize(this, true);
-        else {
-            log("You must have the CommandAPI dependency to use info commands!", Level.WARNING);
+        if(Bukkit.getPluginManager().getPlugin("CommandAPI") == null) {
             InfoCommandManager.initialize(this, false);
-        }
+            log("You must have the CommandAPI dependency to use info commands!", Level.WARNING);
+        } else
+            InfoCommandManager.initialize(this, true);
+
         log("commands.yml loaded!", Level.INFO);
     }
 }
