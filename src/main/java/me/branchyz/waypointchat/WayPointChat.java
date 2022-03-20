@@ -10,6 +10,7 @@ import me.branchyz.waypointchat.util.AutoBroadcastConfig;
 import me.branchyz.waypointchat.util.CountdownConfig;
 import me.branchyz.waypointchat.util.CurseWordsConfig;
 import me.branchyz.waypointchat.util.Messages;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,7 @@ import java.util.Arrays;
 import java.util.logging.Level;
 
 public final class WayPointChat extends JavaPlugin {
+
     private boolean chatMuted = false;
     private CountdownCommand countdownCommand;
 
@@ -37,6 +39,8 @@ public final class WayPointChat extends JavaPlugin {
         pm.registerEvents(new ChatListener(this), this);
 
         AutoBroadcast.initialize(this);
+
+        new Metrics(this, 14695);
     }
 
     @Override
@@ -105,5 +109,4 @@ public final class WayPointChat extends JavaPlugin {
         } else InfoCommandManager.initialize(this, false);
         log("commands.yml loaded!", Level.INFO);
     }
-
 }
