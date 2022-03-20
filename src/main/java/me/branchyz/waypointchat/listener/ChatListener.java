@@ -31,6 +31,8 @@ public class ChatListener implements Listener {
 
         }
 
+        if(p.hasPermission("waypoint.cursewords.bypass")) return;
+
         final ArrayList<String> curseWords = new ArrayList<>(CurseWordsConfig.get().getStringList("curse-words"));
         final String msg = e.getMessage().toLowerCase();
 
@@ -39,7 +41,7 @@ public class ChatListener implements Listener {
                 e.setCancelled(true);
                 p.sendMessage(Messages.PREFIX.toString() + Messages.CURSE_WORD_USED);
                 final String alert = Messages.PREFIX + Messages.CURSE_WORD_ALERT.toString().replace("%player%", p.getName()).replace("%curse_word%", curseWord);
-                Bukkit.getOnlinePlayers().stream().filter(alertPlayer -> alertPlayer.hasPermission("waypoint.alert")).
+                Bukkit.getOnlinePlayers().stream().filter(alertPlayer -> alertPlayer.hasPermission("waypoint.cursewords.alert")).
                         forEach(alertPlayer -> alertPlayer.sendMessage(alert));
                 break;
             }
