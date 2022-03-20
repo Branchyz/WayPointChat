@@ -1,0 +1,1 @@
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?size=25&duration=6000&color=CFA84D&background=000000&center=true&vCenter=true&width=800&height=400&lines=WayPointChat;Chat+Manager;A+WayPoint+%C2%A9+Project;Developed+by+Branchyz)](https://www.spigotmc.org/resources/waypointchat.100846/)
