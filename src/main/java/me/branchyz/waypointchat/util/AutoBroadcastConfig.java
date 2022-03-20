@@ -24,27 +24,12 @@ public class AutoBroadcastConfig {
             }
         }
         conf = YamlConfiguration.loadConfiguration(file);
-        conf.options().setHeader(Arrays.asList(" WayPointChat",
-                " Chat Manager",
-                " Author: Waypoint (Branchyz)",
-                "",
-                " Notes:",
-                " Use https://mapmaking.fr/tick/ for auto-broadcast interval calculation."));
-        save(plugin);
     }
 
     public static FileConfiguration get(){
         return conf;
     }
 
-    public static void save(WayPointChat plugin) {
-        try {
-            conf.save(file);
-        } catch(IOException e) {
-            e.printStackTrace();
-            plugin.disable();
-        }
-    }
 
     public static void reload(){
         conf = YamlConfiguration.loadConfiguration(file);

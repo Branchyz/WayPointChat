@@ -1,9 +1,17 @@
-# WayPointChat
-# Chat Manager
-# Author: Waypoint (Branchyz)
-#
+######################################################################
+#                                                                    #
+#                            WayPointChat                            #
+#                    Created by Branchyz, WayPoint                   #
+#                        --------------------                        #
+#                         auto-broadcast.yml                         #
+#                                                                    #
+#                    https://discord.gg/8jYpH3H2fG                   #
+######################################################################
+
 # Notes:
-# Use https://mapmaking.fr/tick/ for auto-broadcast interval calculation.
+# "start" is how long it takes in minutes to broadcast for the first time.
+# With "start" you can time the broadcasts, so that they don't all broadcast at the same time.
+# "interval" is the amount of time in minutes between broadcasts.
 
 auto-broadcast:
   discord:
@@ -11,12 +19,12 @@ auto-broadcast:
       - "&6Don't forget to join our Discord server!"
       - "&6Our &6&lDiscord&r&6 Server:"
       - "&6https://discord.gg/spigotmc"
-    start: 0
-    interval: 6000
+    start: 0 #Minutes
+    interval: 10 #Minutes
   website:
     messages:
       - "&6Don't forget to visit our website!"
       - "&6Our &6&lWebsite&r&6:"
       - "&6https://www.spigotmc.org/"
-    start: 3000
-    interval: 6000
+    start: 5 #Minutes
+    interval: 10 #Minutes

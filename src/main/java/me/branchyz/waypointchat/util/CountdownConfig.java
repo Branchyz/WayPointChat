@@ -24,35 +24,10 @@ public class CountdownConfig {
             }
         }
         conf = YamlConfiguration.loadConfiguration(file);
-        conf.options().setHeader(Arrays.asList(" WayPointChat",
-                " Chat Manager",
-                " Author: Waypoint (Branchyz)",
-                "",
-                " Usage:",
-                " /cd start <countdown-title> <seconds> <action>",
-                " /cd stop <countdown-title>",
-                " <countdown-title> = Message in bossbar (including colorcode).",
-                " <seconds> = time in seconds",
-                " <action> = Action is defined below, use the key here.",
-                "",
-                " Actions:",
-                " Actions are directly perfomed by the console. No slash (/) needed.",
-                " You can use any command here, for example; give, exp, chatmute etc."));
-
-        conf.setInlineComments("countdown-format", Arrays.asList("Placeholders: %time% & %countdown-name% (Don't forget that you can also use color codes here!)"));
     }
 
     public static FileConfiguration get(){
         return conf;
-    }
-
-    public static void save(WayPointChat plugin) {
-        try {
-            conf.save(file);
-        } catch(IOException e) {
-            e.printStackTrace();
-            plugin.disable();
-        }
     }
 
     public static void reload(){

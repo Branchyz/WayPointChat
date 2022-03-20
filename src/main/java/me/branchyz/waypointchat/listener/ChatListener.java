@@ -40,7 +40,7 @@ public class ChatListener implements Listener {
             if(msg.contains(curseWord.toLowerCase())) {
                 e.setCancelled(true);
                 p.sendMessage(Messages.PREFIX.toString() + Messages.CURSE_WORD_USED);
-                final String alert = Messages.PREFIX + Messages.CURSE_WORD_ALERT.toString().replace("%player%", p.getName()).replace("%curse_word%", curseWord);
+                final String alert = Messages.PREFIX + Messages.CURSE_WORD_ALERT.toString().replace("%player%", p.getName()).replace("%curse-word%", curseWord);
                 Bukkit.getOnlinePlayers().stream().filter(alertPlayer -> alertPlayer.hasPermission("waypoint.cursewords.alert")).
                         forEach(alertPlayer -> alertPlayer.sendMessage(alert));
                 break;

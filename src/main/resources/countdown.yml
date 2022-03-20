@@ -1,18 +1,28 @@
-# WayPointChat
-# Chat Manager
-# Author: Waypoint (Branchyz)
+######################################################################
+#                                                                    #
+#                            WayPointChat                            #
+#                    Created by Branchyz, WayPoint                   #
+#                        --------------------                        #
+#                            countdown.yml                           #
+#                                                                    #
+#                    https://discord.gg/8jYpH3H2fG                   #
+######################################################################
 
+# Notes:
+# Actions are directly performed commands by the console. No slash (/) needed.
+# You can use any command!
+
+# The format used for the countdown.
+# Don't forget that you can also use color codes here!
+# Placeholders: %time% & %countdown-name%.
 countdown-format: "&6%countdown-name%: %time%"
 
-restart:
+# Define your actions here.
+actions:
+  restart:
   - restart
-
-stop:
+  stop:
   - stop
-
-broadcast-restart:
-  - broadcast &6Restarting!
-  - restart
-
-test:
-  - broadcast Countdown done!
+  give-cookies:
+  - give @a cookie 64
+  - broadcast Cookies!

@@ -1,10 +1,16 @@
-# WayPointChat
-# Chat Manager
-# Author: Waypoint (Branchyz)
+######################################################################
+#                                                                    #
+#                            WayPointChat                            #
+#                    Created by Branchyz, WayPoint                   #
+#                        --------------------                        #
+#                             config.yml                             #
+#                                                                    #
+#                    https://discord.gg/8jYpH3H2fG                   #
+######################################################################
 
 motd-title:
-  fade-in: 20
-  stay: 60
-  fade-out: 20
+  fade-in: 20 # Ticks
+  stay: 60 # Ticks
+  fade-out: 20 # Ticks
 
 clear-chat-iterations: 100

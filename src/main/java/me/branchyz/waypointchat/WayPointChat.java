@@ -73,11 +73,8 @@ public final class WayPointChat extends JavaPlugin {
     }
 
     private void setupDefaultConfig() {
-        getConfig().options().setHeader(Arrays.asList(" WayPointChat",
-                " Chat Manager",
-                " Author: Waypoint (Branchyz)"));
-        getConfig().options().copyDefaults(true);
         saveDefaultConfig();
+        getConfig().options().copyDefaults(true);
     }
 
     private void setupConfigs() {
@@ -91,17 +88,14 @@ public final class WayPointChat extends JavaPlugin {
 
         CountdownConfig.setup(this);
         CountdownConfig.get().options().copyDefaults(true);
-        CountdownConfig.save(this);
         log("countdown.yml loaded!", Level.INFO);
 
         CurseWordsConfig.setup(this);
         CurseWordsConfig.get().options().copyDefaults(true);
-        CurseWordsConfig.save(this);
         log("cursed-words.yml loaded!", Level.INFO);
 
         AutoBroadcastConfig.setup(this);
         AutoBroadcastConfig.get().options().copyDefaults(true);
-        AutoBroadcastConfig.save(this);
         log("auto-broadcast.yml loaded!", Level.INFO);
 
         if(Bukkit.getPluginManager().getPlugin("CommandAPI") == null) {

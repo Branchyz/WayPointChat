@@ -16,7 +16,7 @@ public class AutoBroadcast extends BukkitRunnable {
 
     private AutoBroadcast(String[] messages, int interval, int start, WayPointChat plugin) {
         this.messages = messages;
-        this.runTaskTimerAsynchronously(plugin, start, interval);
+        this.runTaskTimerAsynchronously(plugin, start, (long) interval * 20 * 60);
     }
 
     @Override

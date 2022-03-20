@@ -38,7 +38,7 @@ public class InfoCommandManager {
     private static void registerCommand(String command, String[] aliases, String[] output, String permission) {
         final CommandAPICommand cmd = new CommandAPICommand(command);
 
-        cmd.withAliases(aliases).withPermission(permission)
+        cmd.withAliases(aliases).withPermission("waypoint." + permission)
                 .executes((executor, args) -> {
                     for (String s : output) {
                         final String msg = ChatColor.translateAlternateColorCodes('&', s);
@@ -70,13 +70,6 @@ public class InfoCommandManager {
         YamlConfiguration conf = YamlConfiguration.loadConfiguration(file);
 
         config = conf;
-
-        try {
-            conf.save(file);
-        } catch(IOException e) {
-            e.printStackTrace();
-            plugin.disable();
-        }
     }
 
 

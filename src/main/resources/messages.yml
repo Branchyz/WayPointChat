@@ -1,24 +1,89 @@
-#  WayPointChat
-#  Chat Manager
-#  Author: Waypoint (Branchyz)
+######################################################################
+#                                                                    #
+#                            WayPointChat                            #
+#                    Created by Branchyz, WayPoint                   #
+#                        --------------------                        #
+#                            messages.yml                            #
+#                                                                    #
+#                    https://discord.gg/8jYpH3H2fG                   #
+######################################################################
 
-prefix: '&6[WayPointChat] '
-broadcast-prefix: '&6[Broadcast]&r '
-no-permission: '&cYou don''t have permission for that!'
-not-a-player: '&cYou need to be a player do that!'
-invalid-usage: '&cInvalid usage! Usage: %usage%'
-title-motd: '&6Welcome to the server!'
-subtitle-motd: '&6%player%'
-curse-word-used: '&cPlease do not curse in chat!'
-curse-word-alert: '&c%player% tried to use a curse word (%curse_word%)!'
-chat-is-muted: '&cThe chat is muted!'
-chat-muted-toggle-on: '&6The chat is now muted!'
-chat-muted-toggle-off: '&6The chat is now unmuted!'
+# Notes:
+# All messages in here start with the prefix!
+# You can use color codes (&).
+
+# The prefix of the plugin.
+prefix: "&6[WayPointChat] "
+
+# This prefix is being used for broadcasts.
+broadcast-prefix: "&6[Broadcast]&r "
+
+# This message is send to the player if the player doesn"t have the required permission.
+no-permission: "&cYou don't have permission for that!"
+
+# This message is sent to the command executor if this command executor is not a player (for player specific commands only).
+not-a-player: "&cYou need to be a player do that!"
+
+# This message is sent to the player if the player has used a command incorrectly.
+# Placeholders:
+# %usage% - The correct usage of the command.
+invalid-usage: "&cInvalid usage! Usage: %usage%"
+
+# If the player joins the server, the player will see this message on screen (as a title).
+# Placeholders:
+# %player% - The name of the player.
+title-motd: "&6Welcome to the server!"
+
+# If the player joins the server, the player will see this message on screen (as a subtitle).
+# Placeholders:
+# %player% - The name of the player.
+subtitle-motd: "&6%player%"
+
+# This message is sent to the player when the player uses a curse word (from the curse-words.yml config).
+curse-word-used: "&cPlease do not curse in chat!"
+
+# This message is sent to players with the permission "waypoint.cursewords.alert" when a player uses a curse word in chat (from the curse-words.yml config).
+# Placeholders:
+# %player% - The name of the player who used the curse word.
+# %curse-word% - The curse word.
+curse-word-alert: "&c%player% tried to use a curse word (%curse-word%)!"
+
+# This message is sent if a player tries to chat while the chat is muted.
+chat-is-muted: "&cThe chat is muted!"
+
+# This message is sent to the player when the player mutes the chat.
+chat-muted-toggle-on: "&6The chat is now muted!"
+
+# This message is sent to the player when the player unmutes the chat.
+chat-muted-toggle-off: "&6The chat is now unmuted!"
+
+# This message will be sent to everyone when the chat is cleared.
 chat-is-cleared: "&6The chat has been cleared!"
+
+# This message is sent to all players on the server when a countdown has ended.
+# Placeholders:
+# %countdown-name% - The countdown that has ended.
 countdown-ended: "&6The countdown %countdown-name% has ended!"
-countdown-command-help: '&cUse "%start-usage%" or "%stop-usage%"!'
+
+# This message will be sent to the player if the player uses the countdown command incorrectly.
+# Placeholders:
+# %start-usage% - The correct usage of the start subcommand.
+# %stop-usage% - The correct usage of the stop subcommand.
+countdown-command-help: "&cUse %start-usage% or %stop-usage%!"
+
+# This message is sent if no action is found with that name (in the countdown config).
+# Placeholders:
+# %action-name% - The name of the action.
 action-not-found: "&cNo action found with the name %action-name%!"
+
+# This message is sent to the player when the player starts a countdown.
 countdown-started: "&6The countdown has started!"
+
+# This message is sent to the player when the player stops a countdown.
 countdown-stopped: "&6The countdown has been stopped!"
+
+# This message is sent to the player if the player tries to start a countdown that is already in progress.
 countdown-already-exist: "&cThat countdown already exist!"
+
+# This message is sent to the player if the player tries to stop a countdown that does not exist.
 countdown-does-not-exist: "&cThat countdown doesn't exist!"

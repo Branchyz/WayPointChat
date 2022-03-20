@@ -1,7 +1,15 @@
-# WayPointChat
-# Chat Manager
-# Author: Waypoint (Branchyz)
+######################################################################
+#                                                                    #
+#                            WayPointChat                            #
+#                    Created by Branchyz, WayPoint                   #
+#                        --------------------                        #
+#                           curse-words.yml                          #
+#                                                                    #
+#                    https://discord.gg/8jYpH3H2fG                   #
+######################################################################
 
+
+# Define your curse words here.
 curse-words:
   - 'No'
   - '):'
