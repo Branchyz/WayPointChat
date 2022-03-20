@@ -18,7 +18,8 @@ public class InfoCommandManager {
 
     public static void initialize(WayPointChat plugin, boolean register) {
         initializeFile(plugin);
-        registerCommands(plugin);
+        if(register)
+            registerCommands(plugin);
     }
 
     private static void registerCommands(WayPointChat plugin) {
