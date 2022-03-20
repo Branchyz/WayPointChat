@@ -41,6 +41,7 @@ public final class WayPointChat extends JavaPlugin {
         AutoBroadcast.initialize(this);
 
         new Metrics(this, 14695);
+        log("Metrics initialized!", Level.INFO);
     }
 
     @Override
