@@ -8,8 +8,9 @@
 
 #Example:
 discord-command:
-  command: "discord" #DO NOT USE A SLASH HERE!
-  aliases: ["dc"] #DO NOT USE A SLASH HERE!
+  command: "discord" # DO NOT USE A SLASH HERE!
+  aliases: ["dc"] # DO NOT USE A SLASH HERE!
+  permission: "discord" # NOTE: ALL permissions start with "waypoint."
   output:
     - "&6Our &6&lDiscord&r&6 Server:"
     - "&6https://discord.gg/spigotmc"

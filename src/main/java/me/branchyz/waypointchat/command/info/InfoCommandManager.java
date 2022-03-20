@@ -23,20 +23,21 @@ public class InfoCommandManager {
 
     private static void registerCommands(WayPointChat plugin) {
         for (String key : config.getKeys(false)) {
-            if(!(config.contains(key + ".command") && config.contains(key + ".aliases") && config.contains(key + ".output"))) continue;
+            if(!(config.contains(key + ".command") && config.contains(key + ".aliases") && config.contains(key + ".output")  && config.contains(key + ".permission"))) continue;
             final String command = config.getString(key + ".command");
             final String[] aliases = config.getStringList(key + ".aliases").toArray(new String[0]);
             final String[] output = config.getStringList(key + ".output").toArray(new String[0]);
+            final String permission = config.getString(key + ".permission");
 
-            registerCommand(command, aliases, output);
+            registerCommand(command, aliases, output, permission);
             plugin.log("Registered the \"" + command + "\" command!", Level.INFO);
         }
     }
 
-    private static void registerCommand(String command, String[] aliases, String[] output) {
+    private static void registerCommand(String command, String[] aliases, String[] output, String permission) {
         final CommandAPICommand cmd = new CommandAPICommand(command);
 
-        cmd.withAliases(aliases)
+        cmd.withAliases(aliases).withPermission(permission)
                 .executes((executor, args) -> {
                     for (String s : output) {
                         final String msg = ChatColor.translateAlternateColorCodes('&', s);
