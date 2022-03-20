@@ -3,6 +3,7 @@ version: ${project.version}
 main: me.branchyz.waypointchat.WayPointChat
 authors: [ Branchyz, WayPoint ]
 depend: [CommandAPI]
+
 commands:
   broadcast:
     aliases: [bc]
