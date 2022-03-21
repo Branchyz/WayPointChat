@@ -16,7 +16,7 @@ WayPointChat is a chat manager developed by WayPoint ©
 - Messages System (All messages are customizable!)
 
 ## Important
-- You need the plugin CommandAPI as dependency for the Info Commands!
+- You need the plugin [**CommandAPI**](https://www.spigotmc.org/resources/api-commandapi-1-16-5-1-18-2.62353/) as dependency for the Info Commands!
 
 ## How to install
 1. [Download the jar.](https://www.spigotmc.org/resources/waypointchat.100846/)
