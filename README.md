@@ -19,6 +19,7 @@ WayPointChat is a chat manager developed by WayPoint ©
 - You need the plugin CommandAPI as dependency for the Info Commands!
 
 ## How to install
-1. Stop your server.
-2. Put the .jar file into your plugins folder
-3. Start your server
+1. [Download the jar.](https://www.spigotmc.org/resources/waypointchat.100846/)
+2. Stop your server.
+3. Put the .jar file into your plugins folder.
+4. Start your server.
