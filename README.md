@@ -14,3 +14,11 @@ WayPointChat is a chat manager developed by WayPoint ©
 - Mute-chat (Mute the global chat)
 - Clearchat (The chat will be cleared so that no one can read it again)
 - Messages System (All messages are customizable!)
+
+## Important
+- You need the plugin CommandAPI as dependency for the Info Commands!
+
+## How to install
+1. Stop your server.
+2. Put the .jar file into your plugins folder
+3. Start your server
