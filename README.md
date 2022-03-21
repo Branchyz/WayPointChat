@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/4BUpNzo.png" width="200"/>
+<img src="https://i.imgur.com/4BUpNzo.png" width="180"/>
 
 # WayPointChat
 
