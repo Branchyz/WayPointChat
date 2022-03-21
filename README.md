@@ -1,4 +1,4 @@
-![sleep most banner](https://i.imgur.com/6ffpDeD.png)
+![sleep most banner](https://i.imgur.com/4BUpNzo.png)
 
 # WayPointChat
 
