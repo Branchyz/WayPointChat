@@ -42,6 +42,7 @@ public final class WayPointChat extends JavaPlugin {
         log("Metrics initialized!", Level.INFO);
 
         latestVersion = !UpdateChecker.hasUpdate(100846, this);
+        if(!latestVersion) log("An update is available!", Level.WARNING);
     }
 
     @Override
@@ -105,10 +106,6 @@ public final class WayPointChat extends JavaPlugin {
             InfoCommandManager.initialize(this, true);
 
         log("commands.yml loaded!", Level.INFO);
-    }
-
-    public File getPluginFile() {
-       return getFile();
     }
 
     public boolean isLatestVersion() {
