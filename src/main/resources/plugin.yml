@@ -18,6 +18,8 @@ commands:
     description: "This command starts or stops a countdown!"
 
 permissions:
+  waypoint.*:
+    description: "Players with this permission can do everything!"
   waypoint.cursewords.alert:
     description: "Players with this permission will receive an alert when someone uses a curse word!"
   waypoint.cursewords.bypass:
@@ -32,3 +34,5 @@ permissions:
     description: "With this permission you have access to the clearchat command!"
   waypoint.countdown:
     description: "With this permission you have access to the countdown command!"
+  waypoint.version:
+    description: "With this permission you will be notified when a new version is available!"

@@ -6,22 +6,20 @@ import me.branchyz.waypointchat.listener.ChatListener;
 import me.branchyz.waypointchat.listener.JoinListener;
 import me.branchyz.waypointchat.runnable.AutoBroadcast;
 import me.branchyz.waypointchat.runnable.Countdown;
-import me.branchyz.waypointchat.util.AutoBroadcastConfig;
-import me.branchyz.waypointchat.util.CountdownConfig;
-import me.branchyz.waypointchat.util.CurseWordsConfig;
-import me.branchyz.waypointchat.util.Messages;
+import me.branchyz.waypointchat.util.*;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Arrays;
+import java.io.File;
 import java.util.logging.Level;
 
 public final class WayPointChat extends JavaPlugin {
 
     private boolean chatMuted = false;
     private CountdownCommand countdownCommand;
+    private boolean latestVersion = false;
 
     @Override
     public void onEnable() {
@@ -42,10 +40,12 @@ public final class WayPointChat extends JavaPlugin {
 
         Metrics metrics = new Metrics(this, 14695);
         log("Metrics initialized!", Level.INFO);
+
+        latestVersion = !UpdateChecker.hasUpdate(100846, this);
     }
 
     @Override
-    public void onDisable() {
+    public void onDisable()  {
         InfoCommandManager.unregisterCommands(this);
         AutoBroadcast.disable(this);
         for (String s : countdownCommand.getCountdowns().keySet()) {
@@ -105,5 +105,13 @@ public final class WayPointChat extends JavaPlugin {
             InfoCommandManager.initialize(this, true);
 
         log("commands.yml loaded!", Level.INFO);
+    }
+
+    public File getPluginFile() {
+       return getFile();
+    }
+
+    public boolean isLatestVersion() {
+        return latestVersion;
     }
 }
