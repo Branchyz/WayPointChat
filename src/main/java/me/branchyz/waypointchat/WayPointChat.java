@@ -41,8 +41,9 @@ public final class WayPointChat extends JavaPlugin {
         Metrics metrics = new Metrics(this, 14695);
         log("Metrics initialized!", Level.INFO);
 
-        latestVersion = !UpdateChecker.hasUpdate(100846, this);
-        if(!latestVersion) log("An update is available!", Level.WARNING);
+        log("Checking for updates...", Level.INFO);
+        latestVersion = UpdateChecker.isLatestVersion(100846, this);
+        if (!latestVersion) log("An update is available!", Level.WARNING);
     }
 
     @Override

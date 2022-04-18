@@ -12,6 +12,7 @@
 # "start" is how long it takes in minutes to broadcast for the first time.
 # With "start" you can time the broadcasts, so that they don't all broadcast at the same time.
 # "interval" is the amount of time in minutes between broadcasts.
+# "world" is an optional parameter, if set, the message will only be sent to players in that world.
 
 auto-broadcast:
   discord:
@@ -21,6 +22,7 @@ auto-broadcast:
       - "&6https://discord.gg/spigotmc"
     start: 0 #Minutes
     interval: 10 #Minutes
+    world: "discord-world" # Name of the world, this auto-broadcast will only display in the world named "discord-world".
   website:
     messages:
       - "&6Don't forget to visit our website!"

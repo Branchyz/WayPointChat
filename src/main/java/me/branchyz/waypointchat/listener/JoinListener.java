@@ -33,9 +33,11 @@ public class JoinListener implements Listener {
         if(!e.getPlayer().hasPermission("waypoint.version")) return;
         if(plugin.isLatestVersion()) return;
 
-        final TextComponent msg = new TextComponent(Messages.getPluginPrefix() + format("&cA new version is available, click here to download!"));
+        final TextComponent msg = new TextComponent(format(Messages.getPluginPrefix() + "&cA &cnew &cversion &cis &cavailable, &cclick &chere &cto &cdownload!"));
+
         msg.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.spigotmc.org/resources/waypointchat-1-12-2-1-18-2.100846/"));
-        msg.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(format("Visit the Spigot website!")).create()));
+        msg.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(format("&6Visit &6the &6Spigot &6website!")).create()));
+        // Color code before every word? TextComponent bug fix (Colors not displaying on a new line)
 
         p.spigot().sendMessage(msg);
     }

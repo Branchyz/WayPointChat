@@ -1,5 +1,6 @@
 package me.branchyz.waypointchat.util;
 
+import me.branchyz.waypointchat.WayPointChat;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -7,6 +8,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.logging.Level;
 
 public class UpdateChecker {
     private static void getVersion(int id, JavaPlugin plugin, final Consumer<String> consumer) {
@@ -21,10 +23,10 @@ public class UpdateChecker {
         });
     }
 
-    public static boolean hasUpdate(int id, JavaPlugin plugin) {
+    public static boolean isLatestVersion(int id, WayPointChat plugin) {
         final boolean[] result = new boolean[1];
         getVersion(id, plugin, version -> {
-            result[0] =  plugin.getDescription().getVersion().equalsIgnoreCase(version);
+            result[0] = plugin.getDescription().getVersion().equals(version);
         });
 
         return result[0];
